@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block Nav %}
+<li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="../admin" target="_blank">Administrador</a>
+    </li>
+    
+    <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="../" >Principal</a>
+    </li>					
+{% endblock %}
+{% block Contenido %}
+
+<a href="{% url 'addFormulario' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+
+<h3>Nuevo articulo</h3>
+<form method="POST" class="post-form" href="../">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-default bg-dark" >Guardar</button>
+</form>
+
+{% endblock %}

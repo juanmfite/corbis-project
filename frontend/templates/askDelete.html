@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block Contenido %}
+
+<h5>Está seguro que quiere eliminar el articulo? </h5>  
+<h5>{{articulo.codigo}} : {{articulo.nombre_item}} </h5>
+
+<a class="button btn btn-dark" href="../"> NO </a> <a class="button btn btn-dark" href="../deleteArticulo/{{articulo.pk}}"> SI </a>
+    
+
+{% endblock %}

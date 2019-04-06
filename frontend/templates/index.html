@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block Nav %}
+<li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="/admin" target="_blank">Administrador</a>
+    </li>
+    
+    <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="/formulario" >Añadir artículo</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="../accounts/logout" >logout</a>
+      </li>	 
+{% endblock %}
+
+{% block Contenido %}
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Acciones</th>
+        <th scope="col">CODIGO</th>
+        <th scope="col">NOMBRE</th>
+        <th scope="col">ITEM</th>
+        <th scope="col">PRECIO UNITARIO</th>
+        <th scope="col">CANTIDAD EN STOCK</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for articulo in articulos %}
+          <tr>
+            <td>
+                <a class="button btn btn-dark" href="askDeleteArticulo/{{ articulo.pk }}"> Borrar </a> <a class="button btn btn-dark" href="formulario/{{ articulo.pk }}/edit/"> Editar </a>
+            </td>
+            <td>{{ articulo.codigo }}</td>
+            <td>{{ articulo.nombre_item }}</td>
+            <td>{{ articulo.tipo_item.nombre }}</td>
+            <td>{{ articulo.precio_unitario }}</td>
+            <td>{{ articulo.cantidad_stock }}</td>
+          </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+
+{% endblock %}

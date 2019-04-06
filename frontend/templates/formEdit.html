@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block Nav %}
+<li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="../admin" target="_blank">Administrador</a>
+    </li>
+    
+    <li class="nav-item">
+    <a class="nav-link js-scroll-trigger" href="../" >Principal</a>
+    </li>					
+{% endblock %}
+{% block Contenido %}
+
+{{ form.as_p }}
+    <!-- <div class="post">
+        <a class="btn btn-default" href="{% url 'edit_formulario' pk=articulo.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <h1>{{ form.as_p }}</h1>
+    </div> -->
+
+{% endblock %}
