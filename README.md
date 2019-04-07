@@ -71,3 +71,8 @@ Es un modelo muy simple que se realizó con dos tablas, una para los Artículos 
 8. _Como Administrador, debo poder gestionar los TIPOS de Items_
 
     Para esto solo se tuvo que agregar en el _admin.py_ el modelo TipoItem. Además se agrego para que puedan ser editados desde la vista general y no tener que hacer clic en cada uno.
+
+## Otros
+Se creó un método que devuelve todos los artículos utilizando Django Rest Framework ya que en principio se pensó que se iba a utilizar y luego no fue necesario.
+
+Dicho método se puede está en _localhost:8000/api/articulos
