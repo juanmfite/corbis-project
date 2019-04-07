@@ -14,7 +14,8 @@ Se utilizó un contenedor Docker para dicho proyecto. El mismo esta hecho con un
 
 Para desplegar el proyecto simplemente se debe ejecutar el script _init.sh_, el mismo contiene todos los comandos de docker junto con importanción de la base de datos.
 
-_Funcionamiento del script iniciador_
+_Explicación del funcionamiento del script iniciador_
+
 Dicho script levanta la base de datos y hace un sleep porque suele demorar unos pocos segundos en quedar lista la base de datos, sino puede haber conflictos si se crea la web antes que la base.
 
 Luego se copia el archivo _corbis-stock.dump_ que tiene todos los datos de prueba y se importan a la base de datos ya creada.
@@ -24,12 +25,12 @@ Finalmente se levanta el servicio de la web y ya está listo para utilizar en _l
 ## Usuarios 
 Usuario sin acceso Admin:
 
-    user: _corbisuser_ , pass: _corbis1234_
+    user: corbisuser , pass: corbis1234
 
 
 Usuario con acceso Admin:
 
-    user: _corbisadmin_ , pass: _corbis1234_
+    user: corbisadmin , pass: corbis1234
 
 ## Modelo de la Base de Datos
 Es un modelo muy simple que se realizó con dos tablas, una para los Artículos y otra tabla para los Tipos de Items. Esto se hizo así ya que cuando se trata de tipos en general, es bueno hacer una tabla aparte donde estén contenidos todos los tipos. Ya que si esta tabla no estuviera entonces podría darse el caso de que, por ejemplo, se creer un item "Tecnología", otro "Tecnologia", otro "tecnologia" u otro "tecno". Entonces si se quieren filtrar sería engorroso darse de cuenta de todas las formas en las que fueron escritas. Entonces la ventaja de una tabla aparte para los tipos es que el tipo ya esta creado y cuando creo un artículo lo selecciono de los que hayan disponibles. 
@@ -75,4 +76,4 @@ Es un modelo muy simple que se realizó con dos tablas, una para los Artículos 
 ## Otros
 Se creó un método que devuelve todos los artículos utilizando Django Rest Framework ya que en principio se pensó que se iba a utilizar y luego no fue necesario.
 
-Dicho método se puede está en _localhost:8000/api/articulos
+Dicho método se puede ver en _localhost:8000/api/articulos_
