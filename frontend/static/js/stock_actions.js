@@ -1,31 +1,39 @@
 $( document ).ready(function() {
     console.log( "ready!" );
 
-    $("#deleteArticulo").click(function () {
+    $("#deleteArticulo").click(function (val) {
 
-        console.log("HOLA")
+        console.log($(this).attr("value"));
+        articulo_id = $(this).attr("value");
 
-        // $.ajax({
-        //     url: api_url + '/datos/datosDisponibles',
-        //     type: 'GET',
-        //     data: fechas,
-        //     success:function(result) {
-        //         if (result.disponible) {
-        //             swal({
-        //                 title: "Hay datos disponibles",
-        //                 icon: "success",
-        //                 timer: 1500,
-        //             });
-        //         } 
-        //         else{
-        //             swal({
-        //                 title: "No hay datos disponibles",
-        //                 icon: "error",
-        //                 timer: 1500,
-        //             });
-        //         }
-        //     }
-        // });                              
+        swal("Esta seguro que quiere eliminar el articulo?", {
+            buttons: {
+              cancel: "No",
+              catch: {
+                text: "Si",
+                value: "catch",
+              },
+              defeat: false,
+            },
+          })
+          .then((value) => {
+            switch (value) {           
+              case "catch":
+              $.ajax({
+                  url: '/deleteArticulo/'+articulo_id.toString(),
+                  type: 'GET',
+                  success:function(art) {
+                    swal("El articulo ha sido eliminado", "-", "success");
+                  }
+              });
+
+                
+                break;
+            }
+          });
+          
+          console.log("Termino")
+                                 
     });
 
 

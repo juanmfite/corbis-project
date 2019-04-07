@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'frontend',
     'articulos',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

@@ -30,7 +30,7 @@
         {% for articulo in articulos %}
           <tr>
             <td>
-                <a class="button btn btn-dark" href="askDeleteArticulo/{{ articulo.pk }}"> Borrar </a> <a class="button btn btn-dark" href="formulario/{{ articulo.pk }}/edit/"> Editar </a>
+                <a class="button btn btn-dark" href="askDeleteArticulo/{{ articulo.pk }}"> Borrar </a> <a class="button btn btn-dark" value = "{{ articulo.pk }}" id="deleteArticulo" href="#"> Borrar2 </a> <a class="button btn btn-dark" href="formulario/{{ articulo.pk }}/edit/"> Editar </a>
             </td>
             <td>{{ articulo.codigo }}</td>
             <td>{{ articulo.nombre_item }}</td>
@@ -39,7 +39,6 @@
             <td>{{ articulo.cantidad_stock }}</td>
           </tr>
         {% endfor %}
-
     </tbody>
 </table>
 

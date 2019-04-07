@@ -4,7 +4,7 @@ docker-compose up -d db
 
 echo "Esperando a Postgres..."
 
-sleep 2
+sleep 10
 
 docker cp corbis-stock.dump $(docker-compose ps -q db):corbis-stock.dump
 
