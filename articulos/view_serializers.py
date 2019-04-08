@@ -5,7 +5,9 @@ from .serializers import *
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from django.contrib.auth.decorators import login_required
 
+@login_required
 @api_view(['GET'])
 def articulos_list(request, format=None):
     """
@@ -25,8 +27,9 @@ def articulos_list(request, format=None):
 
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@login_required
 @api_view(['GET'])
-def articulos_delete(request, pk, format=None):
+def articulos_detail(request, pk, format=None):
     """
     Devuelve el articulo con el pk especificado.
 
