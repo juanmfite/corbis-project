@@ -11,7 +11,7 @@ Este es un proyecto hecho en Django en el que se resuelve la consigna del test t
 - Django Rest Framework
 - Docker (docker-compose)
 
-### Pre-requisitos 📋
+### Pre-requisitos
 
 Se debe tener instalado docker y docker-compose. 
 
@@ -22,6 +22,13 @@ Tener libre el puerto 8000.
 Se utilizó un contenedor Docker para dicho proyecto. El mismo esta hecho con un _docker-compose_.
 
 Para desplegar el proyecto simplemente se debe ejecutar el script _init.sh_, el mismo contiene todos los comandos de docker junto con importanción de la base de datos.
+
+
+_Explicación del funcionamiento del docker-compose_
+
+En el docker-compose se crearon dos servicios, uno para la web y otro la base de datos. 
+
+Para el servicio de la base de datos no se creo un volumen ya que se hizo un dump con algunos datos y luegos son cargados en la inicialización. Y para el servicio de la web se realiza el comando _runserver_ de Django para iniciar el servidor de desarrollo del mismo. 
 
 _Explicación del funcionamiento del script iniciador_
 
@@ -65,22 +72,18 @@ Es un modelo muy simple que se realizó con dos tablas, una para los Artículos 
     Por defecto es obligatorio tener el campo completo.
 
 4. _Como Usuario, debo poder eliminar un artículo al stock_
-
-    En la vista se ven dos botones ya que se encaró el problema con el _Borrar2_ y se logró el funcionamiento pero el problema fue 
-    que se cuando se listaban los articulos en la tabla, solo se podía usar con el primer articulos y no con el resto. Es algun
-    error que no se llego a entender porque en el html. Entonces si se prueba este método se puede eliminar pero solo el primero
-    de la lista. Se realizó utilizando javascript.
     
-    Entonces se realizó el _Borrar_ que funciona bien pero tal vez no es una forma muy buena. Esta se realizó sin javascript, solamente
-    views de Django.
+    Se puso un botón _Borrar_ al costado de cada articulo en la lista. El mismo fue implementado con views de Django y templates, sin javascripts
+    ya que no fue necesario. 
 
 5. _Como Usuario, debo poder consultar un artículo del stock_
 
     Este punto en particular no entendi que es lo que se queria ya que los articulos están listados y la acción de editar es el siguiente requerimiento.
+    Por lo tanto se cree que ya estaría resuelto.
 
 6. _Como Usuario, debo poder editar un artículo del stock_
 
-    Este método no se pudo finalizar ya que no tiraba un error cuando quería devolver la lista para editar utilizando el Form de Django.
+    Este método no se pudo finalizar ya que tiraba un error cuando quería devolver la lista para editar utilizando el Form de Django.
 
 7. _Como Administrador, debo poder gestionar USUARIOS_
 

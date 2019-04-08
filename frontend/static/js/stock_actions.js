@@ -1,5 +1,4 @@
 $( document ).ready(function() {
-    console.log( "ready!" );
 
     $("#deleteArticulo").click(function (val) {
 
@@ -26,7 +25,6 @@ $( document ).ready(function() {
                     swal("El articulo ha sido eliminado", "-", "success");
                   }
               });
-
                 
                 break;
             }
