@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+from django.views import generic
 
 @login_required
 def askDeleteArticulo(request,pk):
@@ -21,6 +22,7 @@ def addFormulario(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.save()
+            return redirect('index')
     if request.method == "GET":
         form = ArticuloForm()
     return render(request, 'formAdd.html', {'form': form})
@@ -34,7 +36,7 @@ def formulario_edit(request,pk):
         if form.is_valid():
             articulo = form.save(commit=False)
             articulo.save()
-            return redirect('index', pk=post.pk)
+            return redirect('index')
     else:
         form = ArticuloForm(instance=articulo)
 

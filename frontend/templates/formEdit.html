@@ -5,15 +5,14 @@
     </li>
     
     <li class="nav-item">
-    <a class="nav-link js-scroll-trigger" href="../" >Principal</a>
+    <a class="nav-link js-scroll-trigger" href="../../../" >Principal</a>
     </li>					
 {% endblock %}
 {% block Contenido %}
-
-{{ form.as_p }}
-    <!-- <div class="post">
-        <a class="btn btn-default" href="{% url 'edit_formulario' pk=articulo.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-        <h1>{{ form.as_p }}</h1>
-    </div> -->
+<h3>Editar articulo</h3>
+<form method="POST" class="post-form" href="../">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="button btn btn-dark" >Modificar</button>
+</form>
 
 {% endblock %}

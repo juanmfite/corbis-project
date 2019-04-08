@@ -1,6 +1,7 @@
 from django import forms
-
+from django.views.generic.edit import UpdateView
 from .models import *
+from .forms import *
 
 class ArticuloForm(forms.ModelForm):
     

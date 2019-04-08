@@ -66,7 +66,9 @@ Es un modelo muy simple que se realizó con dos tablas, una para los Artículos 
 
 3. _Como Usuario, debo poder agregar un artículo al stock_
 
-    En la barra superior hay un tag que dice _Añadir artículo_. Este redirige a un formulario realizado con los Forms de Django. 
+    En la barra superior hay un tag que dice _Añadir artículo_. Este redirige a un formulario realizado con los Forms de Django. Una vez realizada
+    la agregación de un artículo nuevo se redirige a la página principal.
+
     Para poder resolver el hecho de que algunos campos sean obligatorios y otros no, es cuando se define el modelo. Para que no sea obligatorio, se define como:
         _blank = True, null = True_
     Por defecto es obligatorio tener el campo completo.
@@ -83,7 +85,9 @@ Es un modelo muy simple que se realizó con dos tablas, una para los Artículos 
 
 6. _Como Usuario, debo poder editar un artículo del stock_
 
-    Este método no se pudo finalizar ya que tiraba un error cuando quería devolver la lista para editar utilizando el Form de Django.
+    Este método es similar al de agregar uno nuevo ya que utiliza los Forms de Django. Se agrego un botón al costado de cada artículo.
+    
+    Una vez hecha la modificación se redirige a la página principal.
 
 7. _Como Administrador, debo poder gestionar USUARIOS_
 
